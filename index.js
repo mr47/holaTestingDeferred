@@ -1,5 +1,7 @@
 'use strict';
 
+// writed this after 20 after interview, and live codding  was in google docs.
+
 const deferred = function(){
     this.listners = [];
     this.then = (listner) => {
