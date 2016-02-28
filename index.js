@@ -5,7 +5,9 @@ const deferred = function(){
     this.then = (listner) => {
         this.listners.push(listner);
     };
+    this.noop = function(){};
     this.resolve = (resp) => {
+        this.listners.push(this.noop);
         let i = 0;
         if (resp instanceof deferred) {
             resp.then((nextResp)=>{
@@ -22,7 +24,7 @@ var d = new deferred();
 
 d.then(function (res) {
     var d1 = new deferred();
-    setTimeout(function () { d1.resolve("Inner Done"); }, 1000);
+    setTimeout(function () { d1.resolve("Inner Done"); }, 1);
     return d1;
 });
 
