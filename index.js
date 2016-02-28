@@ -1,6 +1,6 @@
 'use strict';
 
-// writed this after 20 after interview, and live codding  was in google docs.
+// writed this after 20 after interview, and live coding  was in google docs.
 
 const deferred = function(){
     this.listners = [];
